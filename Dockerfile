@@ -1,13 +1,14 @@
-FROM ubuntu:19.04
+FROM ubuntu:20.04
 
-ARG REMIXD_COMMIT=eb3d850b06eb05611c97a8b58abc8f940c8e02ce
-ARG REMIX_VERSION=0.8.8
+ARG REMIXD_COMMIT=db4e5cdf67c6762927ad29a6934029c4286b023d
+ARG REMIX_VERSION=0.10.1
 ARG NVM_VERSION=0.34.0
 ENV NPM_VERSION=10.15.3
 
 USER root
 RUN apt-get update && apt-get install -yqq curl git python build-essential wget
 COPY ./entrypoint.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/entrypoint.sh
 RUN yes | adduser --disabled-password remix && mkdir /app
 
 USER remix
