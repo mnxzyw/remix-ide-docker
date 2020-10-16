@@ -17,7 +17,7 @@ Remixd is automatically started in the same container, so it can be used right a
 version: '3'
 services:
   remix-ide:
-    image: mnxzyw/remix-ide:latest
+    image: remix-ide:latest
     container_name: remix-ide
     restart: unless-stopped
     ports:
